@@ -1,0 +1,18 @@
+<div class="flex flex-col">
+    <div class="flex">
+        <button class="flex w-full" type="button" {{on "click" this.toggle}}>
+            {{#if this.open}}
+              <Icons::OpenFolder /><span>{{@item.name}}</span>
+            {{else}}
+            <Icons::ClosedFolder /><span>{{@item.name}}</span>
+            {{/if}}
+        </button>
+    </div>
+    {{#if this.open}}
+        {{#each @item.children as |element|}}
+            <div class="px-3">
+                <Ui::FileList @item={{element}} />
+            </div>
+        {{/each}}
+    {{/if}}
+</div>

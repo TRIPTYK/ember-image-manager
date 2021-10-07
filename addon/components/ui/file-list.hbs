@@ -1,0 +1,7 @@
+<li>
+    {{#if @item.children}} 
+        <Ui::FolderItem  @item={{@item}} />
+    {{else}}
+        <Ui::FileItem @item={{@item}} />
+    {{/if}}
+</li>
